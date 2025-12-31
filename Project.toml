@@ -1,9 +1,19 @@
 name = "RTBJulia"
-uuid = "f1ad3182-c6f5-4314-86c8-4bb61c60e07e"
+uuid = "04af9736-3fd9-43ce-b456-74816504871c"
 authors = ["Andrés Morales"]
 version = "1.0.0-DEV"
 
+[deps]
+CoordinateTransformations = "150eb455-5306-5404-9cee-2592286d6298"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Rotations = "6038ab10-8711-5258-84ad-4b1120ba62dc"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+
 [compat]
+CoordinateTransformations = "0.6.4"
+LinearAlgebra = "1.11.0"
+Rotations = "1.7.1"
+StaticArrays = "1.9.16"
 julia = "1.10.10"
 
 [extras]
