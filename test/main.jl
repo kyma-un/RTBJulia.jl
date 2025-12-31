@@ -3,6 +3,8 @@ using StaticArrays
 using Rotations
 using .HomogenousTransforms
 
+using RTBJulia
+
 println("=== Testing SE3 constructors ===")
 
 # Example 1: Rotation + Translation
