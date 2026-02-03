@@ -1,7 +1,12 @@
 name = "RTBJulia"
 uuid = "04af9736-3fd9-43ce-b456-74816504871c"
+<<<<<<< HEAD
 authors = ["Andrés Morales", "Juan Daleman"]
 version = "0.0.1"
+=======
+authors = ["Andrés Morales"]
+version = "1.0.0-beta1"
+>>>>>>> 5b4165709abdbf9320a6980bb708526c9088a5e5
 
 [deps]
 CoordinateTransformations = "150eb455-5306-5404-9cee-2592286d6298"

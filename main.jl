@@ -18,4 +18,3 @@ p_transformed = H(p)
 println("Punto transformado: ")
 println(p_transformed)
 
-
