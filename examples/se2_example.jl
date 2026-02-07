@@ -1,6 +1,6 @@
-using RTBJulia
+using RoboticsToolbox
 using StaticArrays
-using RTBJulia.se2: Se2
+using RoboticsToolbox.se2: Se2
 
 println("=== SE(2) examples ===")
 

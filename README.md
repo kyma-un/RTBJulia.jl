@@ -1,16 +1,16 @@
-# RTBJulia
+# RoboticsToolbox
 
-[![Build Status](https://github.com/mora200217/RTBJulia.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/mora200217/RTBJulia.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Build Status](https://github.com/mora200217/RoboticsToolbox.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/mora200217/RoboticsToolbox.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 ### Instalación 
 
 ### Getting started 
 Una vez instalada la libreria, se recomienda importar `StaticArrays` para realizar operaciones básicas de transformación y operación. 
 
-> RTBJulia Usar Rotations.jl y CoordinateTransformations.kl 
+> RoboticsToolbox Usar Rotations.jl y CoordinateTransformations.kl 
 
 ```julia
-using RTBJulia
+using RoboticsToolbox
 using StaticArrays
 
 # Definición de translacion y rotacion 

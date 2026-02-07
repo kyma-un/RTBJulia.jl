@@ -3,7 +3,7 @@ using StaticArrays
 using Rotations
 using .HomogenousTransforms
 
-using RTBJulia
+using RoboticsToolbox
 
 println("=== Testing SE3 constructors ===")
 

@@ -1,9 +1,11 @@
-using RTBJulia
+using RoboticsToolbox
 using StaticArrays
 
 # Definición de translacion y rotacion 
 t = Translation(0.0, 1.0, 2.0)
 R = RotY(pi/2) * RotZ(pi/4)
+E = @SVector [sqrt(3), sqrt(3), sqrt(3)]
+
 
 # Definición de punto en el espacio 
 p = SVector(1.0, 0.0, 0.0) # unitario en x 

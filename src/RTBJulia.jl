@@ -1,4 +1,4 @@
-module RTBJulia
+module RoboticsToolbox
 
 using LinearAlgebra
 using StaticArrays

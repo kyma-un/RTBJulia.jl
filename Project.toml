@@ -1,4 +1,4 @@
-name = "RTBJulia"
+name = "RoboticsToolbox"
 uuid = "04af9736-3fd9-43ce-b456-74816504871c"
 authors = ["Andrés Morales", "Juan Daleman"]
 version = "0.0.1"
@@ -10,7 +10,6 @@ Rotations = "6038ab10-8711-5258-84ad-4b1120ba62dc"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
 [compat]
-CoordinateTransformations = "0.6.4"
 LinearAlgebra = "1.11.0"
 Rotations = "1.7.1"
 StaticArrays = "1.9.16"
