@@ -40,7 +40,7 @@ using .SE2
 
     @testset "Entrada como SVector{2} con θ" begin
         xy = @SVector [1.0, 2.0]
-        θ  = pi
+        θ  = Float64(pi)
 
         T = Se2(xy, θ)
 

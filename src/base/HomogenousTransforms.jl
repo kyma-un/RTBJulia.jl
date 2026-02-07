@@ -5,43 +5,51 @@ using LinearAlgebra
 using StaticArrays
 using CoordinateTransformations
 
-export SE3, Translation
+export embed_se2, as_rotation_translation
 
 # ============================================================
-# SE(3) type
+# Utilities for homogeneous transforms
 # ============================================================
 
-struct SE3{T}
-    R::SMatrix{3,3,T,9}  # rotation matrix
-    t::SVector{3,T}      # translation vector
+"""
+    embed_se2(T::SMatrix{3,3})
+
+Embebe una transformación homogénea SE(2) (3×3) en componentes de SE(3).
+
+Retorna:
+- R :: SMatrix{3,3}
+- t :: SVector{3}
+"""
+function embed_se2(T::SMatrix{3,3,Tt,9}) where Tt
+    R2 = T[1:2, 1:2]
+    t2 = T[1:2, 3]
+
+    R = @SMatrix [
+        R2[1,1] R2[1,2] zero(Tt)
+        R2[2,1] R2[2,2] zero(Tt)
+        zero(Tt) zero(Tt) one(Tt)
+    ]
+
+    t = @SVector [t2[1], t2[2], zero(Tt)]
+
+    return R, t
 end
 
-# ============================================================
-# Constructors for SE3
-# ============================================================
+"""
+    as_rotation_translation(R::Rotation{3}, t)
 
-# Identity rotation + zero translation (default Float64)
-SE3() = SE3{Float64}(SMatrix{3,3,Float64,9}(I), SVector{3,Float64}(0.0,0.0,0.0))
-
-# Parametric identity with given translation
-SE3(t::SVector{3,T}) where T = SE3{T}(SMatrix{3,3,T,9}(I), t)
-
-# From StaticArrays matrix + SVector translation
-SE3(R::SMatrix{3,3,T,9}, t::SVector{3,T}) where T = SE3{T}(R, t)
-
-# General constructor: any Rotation + SVector / Translation / NTuple
-SE3(R::RType, t) where {RType<:Rotation{3}} = begin
+Convierte una rotación de `Rotations.jl` y una traslación en
+`(Rmat, tvec)` con `StaticArrays`.
+"""
+function as_rotation_translation(R::Rotation{3}, t)
     tv = t isa SVector ? t :
          t isa Translation ? t.translation :
-         SVector(t...)  # para NTuple
+         SVector(t...)   # NTuple
+
     T = eltype(tv)
-    SE3{T}(SMatrix{3,3,T,9}(vec(RotMatrix(R))), tv)
+    Rm = SMatrix{3,3,T,9}(RotMatrix(R))
+
+    return Rm, tv
 end
-
-# ============================================================
-# Action on points
-# ============================================================
-
-(H::SE3{T})(x::SVector{3,T}) where T = H.R * x + H.t
 
 end # module

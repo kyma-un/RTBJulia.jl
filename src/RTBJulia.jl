@@ -7,12 +7,14 @@ using CoordinateTransformations
 
 include("base/HomogenousTransforms.jl")
 include("plotting/BasePlots.jl")
+include("base/se2.jl")
 
 using .HomogenousTransforms
 using .BasePlots
+using .SE2
 
 # Exportar lo propio
-export SE3, HomogenousTransform, trplot3
+export SE3, HomogenousTransform, Se2, trplot3
 
 # -------------------------------
 # Reexportar todo Rotations.jl
