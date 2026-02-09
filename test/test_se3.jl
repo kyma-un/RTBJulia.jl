@@ -1,7 +1,6 @@
 using Test
 using StaticArrays
 using LinearAlgebra
-
 using RoboticsToolbox.HomogenousTransforms: Se2, Se3
 
 # ============================================================

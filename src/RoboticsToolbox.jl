@@ -16,7 +16,7 @@ include("base/HomogenousTransforms.jl")
 include("plotting/BasePlots.jl")
 
 # Import submodules
-using .HomogenousTransforms: Se2, Se3, Transl
+using .HomogenousTransforms: Se2, Se3, Transl2, Transl
 using .BasePlots: trplot3
 
 
