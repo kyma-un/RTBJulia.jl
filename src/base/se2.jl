@@ -12,7 +12,7 @@ function Se2(x, y, θ; deg::Bool=false)
     # type normalization
     x, y, θ = promote(float(x), float(y), float(θ))
 
-    θ = deg ? θ * (pi / 180) : θ
+    θ = deg ? deg2rad(θ) : θ
 
     c = cos(θ)
     s = sin(θ)
@@ -20,7 +20,7 @@ function Se2(x, y, θ; deg::Bool=false)
     return @SMatrix [
         c   -s   x
         s    c   y
-        0.0  0.0  1.0
+        zero(x)  zero(x)  one(x)
     ]
 end
 
