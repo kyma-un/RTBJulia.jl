@@ -1,9 +1,3 @@
-module SE2
-
-using StaticArrays
-
-export Se2
-
 # ============================================================
 # SE(2) homogeneous transformation
 # ============================================================
@@ -35,5 +29,3 @@ Se2(xy::SVector{2}, θ; deg::Bool=false) =
 # se2([x, y, θ])
 Se2(xyt::SVector{3}; deg::Bool=false) =
     Se2(xyt[1], xyt[2], xyt[3]; deg=deg)
-
-end # module

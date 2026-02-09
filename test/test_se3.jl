@@ -2,8 +2,7 @@ using Test
 using StaticArrays
 using LinearAlgebra
 
-using RoboticsToolbox: Se2
-using RoboticsToolbox.SE3: Se3
+using RoboticsToolbox.HomogenousTransforms: Se2, Se3
 
 # ============================================================
 # Test suite for SE(3) homogeneous transformations

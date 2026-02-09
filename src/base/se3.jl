@@ -1,9 +1,3 @@
-module SE3
-
-using StaticArrays
-
-export Se3
-
 # ============================================================
 # SE(3) homogeneous transformation
 # Embedding of SE(2) into SE(3)
@@ -30,6 +24,4 @@ function Se3(T2::SMatrix{3,3})
         zero(T)  zero(T)  zero(T)  one(T)
     ]
 end
-
-end # module
 
