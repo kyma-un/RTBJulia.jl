@@ -9,15 +9,16 @@ functionality is delegated to specialized submodules.
 """
 module RoboticsToolbox
 
+using Reexport
+
 # ------------------------------------------------------------------
 # Internal submodules
 # ------------------------------------------------------------------
 include("base/HomogenousTransforms.jl")
-include("plotting/BasePlots.jl")
+@reexport using .HomogenousTransforms
 
-# Import submodules
-using .HomogenousTransforms: Se2, Se3, Transl2, Transl
-using .BasePlots: trplot3
+include("plotting/BasePlots.jl")
+@reexport using .BasePlots
 
 
 end # module RoboticsToolbox
