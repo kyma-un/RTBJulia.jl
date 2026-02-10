@@ -8,7 +8,7 @@
 Create a 2×2 SO(2) rotation matrix representing a rotation
 of `theta` radians. If `deg=true`, `theta` is interpreted in degrees.
 """
-function Rot2(θ; deg::Bool=false)
+function Rot2(θ::Real; deg::Bool=false)
     θf = float(θ)
     θf = deg ? deg2rad(θf) : θf
 
