@@ -108,6 +108,5 @@ matriz[1, :] = conversions;
 matriz[2, :] = errores;
 matriz[3, :] = estados;
 
-genTable(headers, matriz,1)
-
+genTable(headers, matriz)
 

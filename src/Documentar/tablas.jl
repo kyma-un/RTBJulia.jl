@@ -8,9 +8,9 @@ function genTable(titulos::Vector{String}, matriz::Matrix{Any},latex::Int = 0)
     for (i, titulo) in enumerate(titulos)
         df[!, Symbol(titulo)] = matriz[i,:]
     end
-    pretty_table(df, column_labels = names(df))
+    pretty_table(df, column_labels = names(df), maximum_number_of_rows = -1)
     if latex == 1
-        pretty_table(Matrix(df), backend = :latex,column_labels = names(df))
+        pretty_table(Matrix(df), backend = :latex,column_labels = names(df) , maximum_number_of_rows = -1)
     end
     
 end
