@@ -1,6 +1,7 @@
-using Rotations
 using StaticArrays
+using Rotations
 using RoboticsToolbox
+## Comprobacion de tiempos de conversión entre representaciones 
 #  Rotaciones de prueba 
 R  = rand(RotMatrix{3, Float64})
 q  = rand(QuatRotation{Float64})
@@ -61,3 +62,6 @@ matriz[4, :] = tiempos_AngleAxis;
 matriz[5, :] = tiempos_RotXYZ;
 
 genTable(titulos, matriz,1)
+
+
+
